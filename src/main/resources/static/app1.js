@@ -1,7 +1,6 @@
 
 var stompClient = null;
 var showLoggedIn = false;
-var userName = "Stroie";
 
 (function(){
 var socket = new SockJS('/chat');
@@ -62,7 +61,7 @@ async function disconnect() {
     if (stompClient !== null) {
         stompClient.disconnect();
     }
-    //setConnected(false);
+
     console.log("Disconnected");
     window.location = "/logout";
 
