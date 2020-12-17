@@ -50,7 +50,8 @@ public class MyStompSessionHandler extends StompSessionHandlerAdapter {
     @Override
     public void handleFrame(StompHeaders headers, Object payload) {
 
-        logger.info("receiveed something");
+        logger.info("receiveed something :" + ((ServerResponseMessage)payload).getContent());
+
         //logger.info("Received : " + ((ServerResponseMessage) payload).getContent());
     }
 

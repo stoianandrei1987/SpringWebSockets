@@ -46,11 +46,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-                .cors().disable()
+                //.cors().disable()
                 .authorizeRequests()
                 .antMatchers("/", "/login").permitAll()
                 .antMatchers("/chat/**").permitAll()
-                .antMatchers("/app/**").permitAll()
+                .antMatchers("/app/**").authenticated()
                 .and()
                 .formLogin().permitAll()
                 .loginProcessingUrl("/login")
